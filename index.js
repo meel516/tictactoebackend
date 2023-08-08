@@ -5,6 +5,7 @@ let url=require('url')
 const cors=require('cors') 
 let saleem="my first message"
 let samplemessage="hi iam saleem"
+const friendsapi=require('./friends/friendsapi')
 
 let app= express()
 app.use(cors())
@@ -28,3 +29,4 @@ const messageUpload =await newMessage.save()
 res.send(messageUpload)}
 sendMessage() 
 })
+app.use('/friends',friendsapi)
