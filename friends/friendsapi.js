@@ -2,7 +2,8 @@ let express=require('express')
 const { friendsDb } = require('../connector')
 const router=express.Router()
 router.get('/friendslist',async (req,res)=>{
-const list = await friendsDb.find({username:req.query.username})
+    console.log('entered')
+const list = await friendsDb.find({username:req.username})
 res.send(list)
 })
 router.post('/addfriend',async (req,res)=>{
